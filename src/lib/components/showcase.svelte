@@ -5,7 +5,7 @@
 	import ProjectSchowcase from './projectSchowcase.svelte';
 </script>
 
-<div class="mx-10 w-full max-w-4xl">
+<div class="md:mx-10 md:my-12 w-full max-w-4xl data-electric-cursor">
 	<Tabs.Root value="experience & education" class="z-10 p-6">
 		<Tabs.List class="grid w-full grid-cols-2">
 			<Tabs.Trigger value="experience & education">Experience</Tabs.Trigger>

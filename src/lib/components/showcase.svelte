@@ -1,7 +1,7 @@
 <script lang="ts">
 	import * as Tabs from '$lib/components/ui/tabs/index.js';
 	import * as Card from '$lib/components/ui/card/index.js';
-	import EducationShowcase from './educationShowcase.svelte';
+	import ExpShowcase from './expShowcase.svelte';
 	import ProjectSchowcase from './projectSchowcase.svelte';
 </script>
 
@@ -20,7 +20,7 @@
 					<Card.Description>My work history and skills</Card.Description>
 				</Card.Header>
 				<Card.Content class="space-y-4">
-					<EducationShowcase />
+					<ExpShowcase />
 				</Card.Content>
 			</Card.Root>
 		</Tabs.Content>

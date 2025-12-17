@@ -1,5 +1,16 @@
+<script lang="ts">
+	import { onMount } from "svelte";
+	import { initElectricCursor } from "$lib/electricCursor";
+
+	onMount(() => {
+		const cleanup = initElectricCursor();
+		return cleanup
+	})
+
+</script>
+
 <section class="space-y-2">
-	<div>
+	<div data-electric-cursor>
 		<h3 class="text-2xl font-semibold">Work Experience</h3>
 		<h4>Software Developer</h4>
 		<p class="text-(--customGold) mt-2 text-lg">Integralware</p>

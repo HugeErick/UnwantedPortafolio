@@ -2,7 +2,7 @@
 	import * as Tabs from '$lib/components/ui/tabs/index.js';
 	import * as Card from '$lib/components/ui/card/index.js';
 	import ExpShowcase from './expShowcase.svelte';
-	import ProjectSchowcase from './projectSchowcase.svelte';
+	import ProjectShowcase from './projectShowcase.svelte';
 </script>
 
 <div class="md:mx-10 md:my-12 w-full max-w-4xl data-electric-cursor">
@@ -31,7 +31,7 @@
 					<Card.Description>Showcasing my skills and creativity</Card.Description>
 				</Card.Header>
 				<Card.Content class="space-y-4">
-					<ProjectSchowcase />
+					<ProjectShowcase />
 				</Card.Content>
 			</Card.Root>
 		</Tabs.Content>

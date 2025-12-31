@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { Separator } from '$lib/components/ui/separator/index';
-	import profilePicture from '$lib/assets/p.jpeg';
-	import cv from '$lib/assets/cv.pdf';
-	import { Linkedin, Github, Instagram, Crown, FileIcon as FileUser } from '@lucide/svelte';
-	import { initElectricCursor } from '$lib/electricCursor';
+	import { onMount } from "svelte";
+	import { Separator } from "$lib/components/ui/separator/index";
+	import profilePicture from "$lib/assets/p.jpeg";
+	import cv from "$lib/assets/cv.pdf";
+	import { Linkedin, Github, Instagram, Crown, FileIcon as FileUser } from "@lucide/svelte";
+	import { initElectricCursor } from "$lib/electricCursor";
 
 	const description = `I'm a software developer with expertise in full-stack development
               and cybersecurity, love to exercise competitive programming and
@@ -12,8 +12,7 @@
 
 	onMount(() => {
 		const cleanup = initElectricCursor();
-		return cleanup
-	})
+		return cleanup })
 </script>
 
 <div

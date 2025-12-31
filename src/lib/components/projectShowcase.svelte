@@ -1,43 +1,46 @@
 <script lang="ts">
-import { onMount } from "svelte"
-import * as Card from "$lib/components/ui/card/index.js"
-import * as Collapsible from "$lib/components/ui/collapsible/index.js"
-import { Badge } from "$lib/components/ui/badge/index.js"
-import { Button } from "$lib/components/ui/button/index.js"
-import { ChevronUp, ChevronDown } from '@lucide/svelte'
+import { onMount } from "svelte";
+import * as Card from "$lib/components/ui/card/index.js";
+import * as Collapsible from "$lib/components/ui/collapsible/index.js";
+import { Badge } from "$lib/components/ui/badge/index.js";
+import { Button } from "$lib/components/ui/button/index.js";
+import ChevronUp from "lucide-svelte/icons/chevron-up";
+import ChevronDown from "lucide-svelte/icons/chevron-down";
 import { initElectricCursor } from '$lib/electricCursor';
 
+import scrapeImg from "$lib/assets/scrapeengine.png";
+import nvimImg from "$lib/assets/nvimimage.png";
 
 onMount(() => {
   const cleanup = initElectricCursor();
-  return cleanup
-})
+  return cleanup;
+});
 
 const projects = [
   {
     title: "ScrapeEngine",
-    description: "ScrapeEngine is a lightweight web scraper built using Playwright JS library, It extracts content from specified URLs, focusing several html tags, and saves the scraped data into individual JSON files",
-    image: "/src/lib/assets/scrapeengine.png",
+    description: "ScrapeEngine is a lightweight web scraper built using Playwright JS library. It extracts content from specified URLs, focusing several html tags, and saves the scraped data into individual JSON files.",
+    image: scrapeImg, // Using the variable, not a string
     github: "https://github.com/HugeErick/ScrapeEngine",
     techs: ["Javascript"]
   },
   {
     title: "Unsleep",
-    description: "Unsleep is very lightweight mouse jiggler to avoid your laptop to suspend/sleep",
-    image: "",
+    description: "Unsleep is very lightweight mouse jiggler to avoid your laptop to suspend/sleep.",
+    image: "", // Keep as empty string if no asset exists yet
     github: "https://github.com/HugeErick/Unsleep",
     techs: ["Rust"]
   },
   {
     title: "My neovim settings",
-    description: "Publicly sharing my neovim configuration",
-    image: "/src/lib/assets/nvimimage.png",
+    description: "Publicly sharing my neovim configuration.",
+    image: nvimImg, // Using the variable
     github: "https://github.com/HugeErick/Unsleep",
     techs: ["Lua"]
   },
   {
     title: "UnwantedSearchEngine",
-    description: "A lightweight desktop search engine demo with a clean, minimalist interface. Features basic text search with real-time results",
+    description: "A lightweight desktop search engine demo with a clean, minimalist interface. Features basic text search with real-time results.",
     image: "",
     github: "https://github.com/HugeErick/UnwantedSearchEngine",
     techs: ["Rust", "Raylib"]
@@ -50,10 +53,11 @@ let openStates = $state(projects.map(() => false));
 <section class="space-y-8">
   {#each projects as project, i}
     <Card.Root class="overflow-hidden border-2 transition-all hover:border-primary/50">
+
       <div class="aspect-video w-full overflow-hidden bg-muted/50 flex items-center justify-center p-4">
         {#if project.image}
           <img
-            src={project.image}
+            src={project.image} 
             alt={project.title}
             class="h-full w-full object-contain transition-transform duration-300 hover:scale-105"
           />
@@ -68,9 +72,7 @@ let openStates = $state(projects.map(() => false));
         <div class="flex items-center justify-between">
           <Card.Title class="text-2xl font-bold">{project.title}</Card.Title>
 
-          <Button variant="outline" size="icon" href={project.github} target="_blank" class="flex items-center justify-center" >
-            <!-- github svg -->
-            <!-- TODO: make the data-electric-cursor work here -->
+          <Button variant="outline" size="icon" href={project.github} target="_blank" class="flex items-center justify-center">
             <div data-electric-cursor>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +112,7 @@ let openStates = $state(projects.map(() => false));
 
           <Collapsible.Content class="flex flex-wrap gap-2 pt-2">
             {#each project.techs as tech}
-              <Badge variant="secondary" class="rounded-md italic text-xs">{tech}</Badge>
+              <Badge variant="secondary" class="rounded-md italic text-xs">#{tech}</Badge>
             {/each}
           </Collapsible.Content>
         </Collapsible.Root>

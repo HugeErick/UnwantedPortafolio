@@ -4,8 +4,7 @@ import * as Card from "$lib/components/ui/card/index.js";
 import * as Collapsible from "$lib/components/ui/collapsible/index.js";
 import { Badge } from "$lib/components/ui/badge/index.js";
 import { Button } from "$lib/components/ui/button/index.js";
-import ChevronUp from "lucide-svelte/icons/chevron-up";
-import ChevronDown from "lucide-svelte/icons/chevron-down";
+import { ChevronUp, ChevronDown } from '@lucide/svelte'
 import { initElectricCursor } from '$lib/electricCursor';
 
 import scrapeImg from "$lib/assets/scrapeengine.png";

@@ -6,7 +6,7 @@
 </script>
 
 <div class="md:mx-10 md:my-12 w-full max-w-4xl data-electric-cursor">
-	<Tabs.Root value="experience & education" class="z-10 p-6">
+	<Tabs.Root value="experience & education" class="z-10 p-4">
 		<Tabs.List class="grid w-full grid-cols-2">
 			<Tabs.Trigger value="experience & education">Experience</Tabs.Trigger>
 			<Tabs.Trigger value="projects">Projects</Tabs.Trigger>
@@ -30,7 +30,7 @@
 					<Card.Title class="text-2xl font-semibold sm:text-4xl">Personal Projects</Card.Title>
 					<Card.Description>Showcasing my skills and creativity</Card.Description>
 				</Card.Header>
-				<Card.Content class="space-y-4">
+				<Card.Content class="space-y-2">
 					<ProjectShowcase />
 				</Card.Content>
 			</Card.Root>

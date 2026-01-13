@@ -28,7 +28,6 @@ const projects = [
   {
     title: "Unsleep",
     description: "Unsleep is very lightweight mouse jiggler to avoid your laptop to suspend/sleep.",
-    // gif need it here
     image: unsleepGif, 
     github: "https://github.com/HugeErick/Unsleep",
     techs: ["Rust"]

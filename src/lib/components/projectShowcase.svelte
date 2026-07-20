@@ -1,23 +1,32 @@
 <script lang="ts">
-import { onMount } from "svelte";
-import * as Card from "$lib/components/ui/card/index.js";
-import * as Collapsible from "$lib/components/ui/collapsible/index.js";
-import { Badge } from "$lib/components/ui/badge/index.js";
-import { Button } from "$lib/components/ui/button/index.js";
-import { ChevronUp, ChevronDown } from '@lucide/svelte'
-import { initElectricCursor } from '$lib/electricCursor';
+  import { onMount } from "svelte";
+  import { goto } from "$app/navigation";
+  import * as Card from "$lib/components/ui/card/index.js";
+  import * as Collapsible from "$lib/components/ui/collapsible/index.js";
+  import { Badge } from "$lib/components/ui/badge/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
+  import { ChevronUp, ChevronDown } from '@lucide/svelte'
+  import { initElectricCursor } from '$lib/electricCursor';
 
-import scrapeImg from "$lib/assets/scrapeengine.png";
-import nvimImg from "$lib/assets/nvimimage.png";
-import unsleepGif from "$lib/assets/unsleep.gif";
+  import scrapeImg from "$lib/assets/scrapeengine.png";
+  import nvimImg from "$lib/assets/nvimimage.png";
+  import unsleepGif from "$lib/assets/unsleep.gif";
+  import geogenesisIcon from "$lib/assets/volcano_heart_cauldron_side.png";
 
 
-onMount(() => {
-  const cleanup = initElectricCursor();
-  return cleanup;
-});
+  onMount(() => {
+    const cleanup = initElectricCursor();
+    return cleanup;
+  });
 
 const projects = [
+  {
+    title: "Geogenesis Mod",
+    description: "My first oficial minecraft mod, refer wiki underneath",
+    image: geogenesisIcon, 
+    github: "https://github.com/HugeErick/Geogenesis",
+    techs: ["Java 21"]
+  },
   {
     title: "ScrapeEngine",
     description: "ScrapeEngine is a lightweight web scraper built using Playwright JS library. It extracts content from specified URLs, focusing several html tags, and saves the scraped data into individual JSON files.",
@@ -122,4 +131,13 @@ let openStates = $state(projects.map(() => false));
       </Card.Content>
     </Card.Root>
   {/each}
+  <div>
+    <Button
+      variant="outline"
+      onclick={() => goto("/GeogenesisWiki")}
+      class="m-1"
+    >
+      Geogenesis Wiki
+    </Button>
+  </div>
 </section>

@@ -1,5 +1,19 @@
+<script lang="ts">
+  import { goto } from "$app/navigation";
+  import { BriefcaseBusiness } from "@lucide/svelte";
+  import { Button } from "$lib/components/ui/button/index.js"
+
+</script>
 
 <section class="my-6 mx-2 p-2 text-slate-200">
+  <div class="mx-1">
+    <Button
+      variant="ghost"
+      onclick={() => goto("/")}
+    >
+      <BriefcaseBusiness class="size-8" />
+    </Button>
+  </div>
   <div class="text-(--customGold)">
     <h2 class="text-center text-6xl font-semibold m-5">Geogenesis Mod Wiki</h2>
     <span class="my-4 mx-2 text-4xl font-semibold">Official wiki</span>

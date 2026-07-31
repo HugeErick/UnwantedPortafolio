@@ -12,6 +12,7 @@
   import nvimImg from "$lib/assets/nvimimage.png";
   import unsleepGif from "$lib/assets/unsleep.gif";
   import geogenesisIcon from "$lib/assets/volcano_heart_cauldron_side.png";
+  import unwImp from "$lib/assets/unwImp.png";
 
 
   onMount(() => {
@@ -19,46 +20,53 @@
     return cleanup;
   });
 
-const projects = [
-  {
-    title: "Geogenesis Mod",
-    description: "My first oficial minecraft mod, refer wiki underneath",
-    image: geogenesisIcon, 
-    github: "https://github.com/HugeErick/Geogenesis",
-    techs: ["Java 21"]
-  },
-  {
-    title: "ScrapeEngine",
-    description: "ScrapeEngine is a lightweight web scraper built using Playwright JS library. It extracts content from specified URLs, focusing several html tags, and saves the scraped data into individual JSON files.",
-    image: scrapeImg, 
-    github: "https://github.com/HugeErick/ScrapeEngine",
-    techs: ["Javascript"]
-  },
-  {
-    title: "Unsleep",
-    description: "Unsleep is very lightweight mouse jiggler to avoid your laptop to suspend/sleep.",
-    image: unsleepGif, 
-    github: "https://github.com/HugeErick/Unsleep",
-    techs: ["Rust"]
-  },
-  {
-    title: "My neovim settings",
-    description: "Publicly sharing my neovim configuration.",
-    image: nvimImg, 
-    github: "https://github.com/HugeErick/Unsleep",
-    techs: ["Lua"]
-  },
-  {
-    title: "UnwantedSearchEngine",
-    description: "A lightweight desktop search engine demo with a clean, minimalist interface. Features basic text search with real-time results.",
-    // gif need it here
-    image: "",
-    github: "https://github.com/HugeErick/UnwantedSearchEngine",
-    techs: ["Rust", "Raylib"]
-  },
-];
+  const projects = [
+    {
+      title: "Geogenesis Mod",
+      description: "My first oficial minecraft mod, refer wiki underneath",
+      image: geogenesisIcon, 
+      github: "https://github.com/HugeErick/Geogenesis",
+      techs: ["Java 21"]
+    },
+    {
+      title: "ScrapeEngine",
+      description: "ScrapeEngine is a lightweight web scraper built using Playwright JS library. It extracts content from specified URLs, focusing several html tags, and saves the scraped data into individual JSON files.",
+      image: scrapeImg, 
+      github: "https://github.com/HugeErick/ScrapeEngine",
+      techs: ["Javascript"]
+    },
+    {
+      title: "UnwantedImpostor",
+      description: "The game of Impostor builded with my own resources",
+      image: unwImp,
+      github: "https://github.com/HugeErick/UnwantedImpostor",
+      techs: ["Svelte", "Sveltekit", "Typescript", "Tailwindcss"]
+    },
+    {
+      title: "Unsleep",
+      description: "Unsleep is very lightweight mouse jiggler to avoid your laptop to suspend/sleep.",
+      image: unsleepGif, 
+      github: "https://github.com/HugeErick/Unsleep",
+      techs: ["Rust"]
+    },
+    {
+      title: "My neovim settings",
+      description: "Publicly sharing my neovim configuration.",
+      image: nvimImg, 
+      github: "https://github.com/HugeErick/Unsleep",
+      techs: ["Lua"]
+    },
+    {
+      title: "UnwantedSearchEngine",
+      description: "A lightweight desktop search engine demo with a clean, minimalist interface. Features basic text search with real-time results.",
+      // gif need it here
+      image: "",
+      github: "https://github.com/HugeErick/UnwantedSearchEngine",
+      techs: ["Rust", "Raylib"]
+    },
+  ];
 
-let openStates = $state(projects.map(() => false));
+  let openStates = $state(projects.map(() => false));
 </script>
 
 <section class="space-y-6">
